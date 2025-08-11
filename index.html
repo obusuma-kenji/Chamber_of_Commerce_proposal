@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Chosen Palette: Corporate Green & Neutral -->
+    <!-- Application Structure Plan: A single-page, vertical-scrolling application designed to transform a static A4 proposal into an engaging interactive experience. The structure follows a logical narrative: 1. Hero (Introduction), 2. Why (Challenges & Solutions), 3. How (The Program), 4. What (Benefits), 5. Who/Cost (Implementation), and 6. CTA (Next Steps). This structure guides the user logically through the proposal. Key interactive elements, such as the accordion for the 3-step program, were chosen to allow users to control the depth of information they explore, making the content more digestible and engaging than a static document. A sticky navigation bar enhances usability by allowing easy access to all sections. -->
+    <!-- Visualization & Content Choices: Report Info: Program steps -> Goal: Organize/Inform -> Viz/Method: Interactive Accordion -> Interaction: Click to expand/collapse -> Justification: Prevents information overload by hiding details until requested, encouraging user interaction. | Report Info: Challenges vs. Solutions -> Goal: Compare/Organize -> Viz/Method: Grid of cards -> Interaction: Implicit comparison through layout -> Justification: Clearly presents problems and their corresponding solutions in a scannable format. | Report Info: Merits for companies vs. chamber -> Goal: Compare -> Viz/Method: Two-column layout with icons -> Interaction: None -> Justification: Provides a clear, direct visual comparison of benefits for the two key stakeholders. No data charts were needed as the source is textual. Icons are Unicode characters. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <title>「健康経営優良法人」認定取得支援プログラム・インタラクティブ提案書</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #F8F9FA;
+            color: #212529;
+        }
+        .brand-color { color: #087F5B; }
+        .brand-bg { background-color: #087F5B; }
+        .brand-bg-light { background-color: #E6F9F4; }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .accordion-header.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-lg font-bold brand-color">認定取得支援プログラム</div>
+            <nav class="hidden md:flex space-x-5">
+                <a href="#purpose" class="text-gray-600 hover:brand-color transition duration-300">目的</a>
+                <a href="#challenges" class="text-gray-600 hover:brand-color transition duration-300">課題と解決策</a>
+                <a href="#program" class="text-gray-600 hover:brand-color transition duration-300">プログラム概要</a>
+                <a href="#merits" class="text-gray-600 hover:brand-color transition duration-300">メリット</a>
+                <a href="#contact" class="brand-bg text-white px-4 py-2 rounded-md hover:bg-[#076C4F] transition duration-300">お問い合わせ</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#purpose" class="block py-2 text-gray-600 hover:brand-color">目的</a>
+            <a href="#challenges" class="block py-2 text-gray-600 hover:brand-color">課題と解決策</a>
+            <a href="#program" class="block py-2 text-gray-600 hover:brand-color">プログラム概要</a>
+            <a href="#merits" class="block py-2 text-gray-600 hover:brand-color">メリット</a>
+            <a href="#contact" class="block mt-2 text-center brand-bg text-white px-4 py-2 rounded-md hover:bg-[#076C4F]">お問い合わせ</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-white pt-16 pb-20">
+            <div class="container mx-auto px-6 text-center">
+                <p class="font-semibold brand-color tracking-wider">商工会議所様向けご提案</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold my-4 text-gray-800">「健康経営優良法人」<br class="md:hidden">認定取得支援プログラム</h1>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">会員企業の価値向上と地域経済の活性化を同時に実現する、戦略的パートナーシップのご提案です。</p>
+            </div>
+        </section>
+
+        <section id="purpose" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-5xl">🎯</span>
+                    <h2 class="text-3xl font-bold my-4">ご提案の背景と目的</h2>
+                    <p class="text-gray-700 leading-relaxed">このセクションでは、本プログラムがなぜ今必要とされているのか、その背景と目指すゴールを解説します。人的資本経営が重視される現代において、従業員の「健康」は企業の持続的成長を支える重要な経営資源です。本プログラムは、貴商工会議所が主体となり、専門家と連携することで、会員企業の認定取得を体系的に支援し、企業価値の向上と地域経済の活性化という二つの大きな目的を同時に達成することを目指します。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="py-20 brand-bg-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-5xl">💡</span>
+                    <h2 class="text-3xl font-bold my-4">会員企業が直面する経営課題と解決策</h2>
+                    <p class="text-gray-700 leading-relaxed mb-12">ここでは、多くの中小企業が抱える具体的な経営課題と、それらを「健康経営」というアプローチでいかに解決できるかを示します。各課題をクリック（タップ）すると、関連する解決策が表示されます。</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2 brand-color">深刻な人手不足と採用難</h3>
+                        <p class="text-gray-600">「従業員を大切にする企業」として認知され、採用競争力が向上。求職者への強力なアピールとなり、人材確保に繋がります。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2 brand-color">従業員の高齢化と活力低下</h3>
+                        <p class="text-gray-600">健康増進施策により、従業員が心身ともに健康で長く活躍できる職場環境を実現。組織全体の活力を維持します。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2 brand-color">生産性の伸び悩み</h3>
+                        <p class="text-gray-600">プレゼンティーズム（心身の不調によるパフォーマンス低下）を改善し、従業員の集中力と生産性を最大化します。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2 brand-color">事業承継問題</h3>
+                        <p class="text-gray-600">魅力的な職場環境は、後継者候補の確保や、M&Aにおける企業評価の向上に繋がり、円滑な事業承継を後押しします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="program" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-5xl">🚀</span>
+                    <h2 class="text-3xl font-bold my-4">貴所と連携して実現する「３ステップ支援プログラム」</h2>
+                    <p class="text-gray-700 leading-relaxed mb-12">このセクションでは、提案の中核となる支援プログラムの詳細をインタラクティブにご紹介します。企業の関心度や準備状況に合わせ、無理なく参加できる段階的なプログラムです。各ステップのヘッダーをクリックして詳細をご覧ください。</p>
+                </div>
+                <div id="accordion" class="max-w-3xl mx-auto space-y-4">
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full text-left p-5 flex justify-between items-center">
+                            <span class="text-lg font-semibold brand-color">【ステップ1】キックオフセミナー：まずは知る・関心を持つ</span>
+                            <span class="accordion-icon text-2xl font-light brand-color transform transition-transform duration-300">+</span>
+                        </button>
+                        <div class="accordion-content px-5 pb-5 text-gray-600">
+                            <p class="font-semibold mt-4">目的：</p>
+                            <p class="mb-3">健康経営の重要性とメリットを広く周知し、無関心層の意識を喚起します。</p>
+                            <p class="font-semibold">内容：</p>
+                            <ul class="list-disc list-inside mb-3 space-y-1">
+                                <li>なぜ今、健康経営なのか？（国の動向、成功事例）</li>
+                                <li>認定取得企業の声（採用応募者数の変化、社員の反応など）</li>
+                                <li>認定取得までの全体像と、本支援プログラムの概要説明</li>
+                            </ul>
+                            <p><span class="font-semibold">対象：</span>全会員企業（集合研修またはオンライン）</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full text-left p-5 flex justify-between items-center">
+                            <span class="text-lg font-semibold brand-color">【ステップ2】実践ワークショップ：申請書を「書ける」レベルになる</span>
+                            <span class="accordion-icon text-2xl font-light brand-color transform transition-transform duration-300">+</span>
+                        </button>
+                        <div class="accordion-content px-5 pb-5 text-gray-600">
+                            <p class="font-semibold mt-4">目的：</p>
+                            <p class="mb-3">申請に必要な手続きから申請書の書き方までを実践的に学び、準備を本格化させます。</p>
+                            <p class="font-semibold">内容：</p>
+                            <ul class="list-disc list-inside mb-3 space-y-1">
+                                <li>「健康宣言」の具体的な手続きと宣言文の作成演習</li>
+                                <li>認定要件の徹底解説（各評価項目で何をすべきか）</li>
+                                <li>申請書（Excel）の記入ポイントと、評価される書き方の指導</li>
+                                <li>取り組み事例の共有と、自社で実施可能な施策の検討</li>
+                            </ul>
+                            <p><span class="font-semibold">対象：</span>認定取得に意欲のある企業（グループワーク形式）</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <button class="accordion-header w-full text-left p-5 flex justify-between items-center">
+                            <span class="text-lg font-semibold brand-color">【ステップ3】個別伴走支援：認定取得までを徹底サポート</span>
+                            <span class="accordion-icon text-2xl font-light brand-color transform transition-transform duration-300">+</span>
+                        </button>
+                        <div class="accordion-content px-5 pb-5 text-gray-600">
+                            <p class="font-semibold mt-4">目的：</p>
+                            <p class="mb-3">各社の状況に応じた課題を抽出し、専門家がマンツーマンで支援することで、申請の確実性を高めます。</p>
+                            <p class="font-semibold">内容：</p>
+                            <ul class="list-disc list-inside mb-3 space-y-1">
+                                <li>現状の取り組みの棚卸しと、アクションプラン策定</li>
+                                <li>申請書のドラフト作成支援、およびブラッシュアップ</li>
+                                <li>取り組み実施のエビデンス（証拠資料）整理に関するアドバイス</li>
+                                <li>申請手続きの最終確認</li>
+                            </ul>
+                            <p><span class="font-semibold">対象：</span>確実に認定を取得したい企業（個別コンサルティング）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="merits" class="py-20 brand-bg-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                     <span class="text-5xl">✨</span>
+                    <h2 class="text-3xl font-bold my-4">本プログラムがもたらすメリット</h2>
+                    <p class="text-gray-700 leading-relaxed mb-12">本プログラムは、参加される会員企業様はもちろん、主催される貴商工会議所にとっても大きなメリットをもたらします。ここでは、それぞれの立場から得られる価値を明確に比較して示します。</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-center">🏢 会員企業のメリット</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="brand-color font-bold mr-3 text-xl">✔</span><span><strong>効率的な認定取得：</strong>専門家の支援で、時間と労力を大幅に削減。</span></li>
+                            <li class="flex items-start"><span class="brand-color font-bold mr-3 text-xl">✔</span><span><strong>具体的な道筋の明確化：</strong>自社の課題と取り組むべき施策がクリアに。</span></li>
+                            <li class="flex items-start"><span class="brand-color font-bold mr-3 text-xl">✔</span><span><strong>施策の質の向上：</strong>他社事例の共有を通じて、効果的なヒントを獲得。</span></li>
+                            <li class="flex items-start"><span class="brand-color font-bold mr-3 text-xl">✔</span><span><strong>企業価値の向上：</strong>認定ロゴマークを活用し、融資優遇や採用PRなど、具体的なビジネスチャンスに直結。</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-center">🏛️ 商工会議所のメリット</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="brand-color font-bold mr-3 text-xl">✔</span><span><strong>会員サービスの付加価値向上：</strong>他団体との差別化を図り、会員満足度を向上。</span></li>
+                            <li class="flex items-start"><span class="brand-color font-bold mr-3 text-xl">✔</span><span><strong>地域経済への貢献：</strong>地域の生産性向上と雇用安定化を促進。</span></li>
+                            <li class="flex items-start"><span class="brand-color font-bold mr-3 text-xl">✔</span><span><strong>新たな収益事業の確立：</strong>プログラムの有料化による、新たな事業収益の柱を構築。</span></li>
+                            <li class="flex items-start"><span class="brand-color font-bold mr-3 text-xl">✔</span><span><strong>先進的な取り組みの発信：</strong>地域をリードする存在として、ブランドイメージが向上。</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                 <div class="grid lg:grid-cols-5 gap-12 items-center">
+                    <div class="lg:col-span-3">
+                        <span class="text-5xl">🤝</span>
+                        <h2 class="text-3xl font-bold my-4">実施体制と費用について</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">実施体制</h3>
+                                <p class="text-gray-700">貴商工会議所と専門家が連携し、企画・広報から専門的支援までを一貫して行います。このセクションでは、具体的な協力体制と、会員企業様が参加しやすい費用モデル（案）をご提示します。</p>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">費用（案）</h3>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-left">
+                                        <thead class="bg-gray-100">
+                                            <tr>
+                                                <th class="p-3 font-semibold">プログラム</th>
+                                                <th class="p-3 font-semibold">費用モデル（一例）</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b"><td class="p-3">ステップ１：キックオフセミナー</td><td class="p-3">会員無料 or 低価格（例：1,000円/人）</td></tr>
+                                            <tr class="border-b"><td class="p-3">ステップ２：実践ワークショップ</td><td class="p-3">5,000円 ～ 10,000円/社</td></tr>
+                                            <tr><td class="p-3">ステップ３：個別伴走支援</td><td class="p-3">50,000円～/社（別途お見積り）</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">※貴商工会議所の事業方針に基づき、柔軟に設計可能です。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2 bg-white p-8 rounded-lg shadow-2xl">
+                        <span class="text-5xl">✉️</span>
+                        <h2 class="text-3xl font-bold my-4">今後の進め方</h2>
+                        <p class="text-gray-700 mb-6">本提案にご関心をお持ちいただけましたら、ぜひ一度、詳細についてご説明の機会を頂戴できればと存じます。会員企業の皆様、そして貴商工会議所の発展に貢献できることを確信しております。</p>
+                        <a href="mailto:contact@example.com?subject=健康経営優良法人認定取得支援プログラムについて" class="w-full text-center block brand-bg text-white font-bold py-3 px-6 rounded-lg hover:bg-[#076C4F] transition-all duration-300">
+                            詳細について問い合わせる
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-6 text-center text-sm">
+            <p>&copy; 2025 健康経営エキスパートアドバイザー. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+
+                header.addEventListener('click', () => {
+                    const isActive = header.classList.contains('active');
+                    
+                    accordionItems.forEach(otherItem => {
+                        otherItem.querySelector('.accordion-header').classList.remove('active');
+                        otherItem.querySelector('.accordion-content').style.maxHeight = '0px';
+                    });
+
+                    if (!isActive) {
+                        header.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if(targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
